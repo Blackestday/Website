@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Contact me</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="cooleffects.css">
+    </head>
+    <body class="background4">
+        <script>
+            fadeInPage();
+            function fadeInPage() {
+               if (!window.AnimationEvent) {return;} // for browsers that dont support this
+           var fader = document.getElementById('fader');
+           fader.classList.add('fade-out');}
+       
+       document.addEventListener('DOMContentLoaded', function(){
+           if (!window.AnimationEvent) {return;}
+           var anchors = document.getElementsByTagName('a');
+           
+           for (var idx=0; idx<anchors.length; idx+=1) {
+               
+               if (anchors[idx].hostname !== window.location.hostname){
+                   return;
+               }
+               anchors[idx].addEventListener('click', function(event){
+                   var fader = document.getElementById('fader'),
+                   anchor = event.currentTarget;
+                   
+                   var listener = function() {
+                       window.location = anchor.href;
+                       fader.removerEventListener('animationend', listener);
+                   };
+                   fader.addEventListener('animationend', listener);
+                   
+                   event.preventDefault();
+                   fader.classList.add('fade-in');
+               });
+               
+           }
+       });
+        </script>
+         <button class='homebutton'><a href = 'index.html'>Home</a></button>
+        <div class="Contactme">Contact Me!</div>
+        <div class="info">
+            <label for="name" style="color:white;">Enter Your Name:</label>
+            <input type="text" id="name" placeholder="Name" size="35"><br><br>
+            <label for="emial" style="color:white;">Enter your email:</label>
+            <input type="email" id="emial" placeholder="Email" size="35"><br><br>
+            <label for="topic" style="color:white;">What is this about?</label>
+            <input type="text" id="topic" placeholder="Topic" size="35"><br><br>
+            <textarea name="Paragraph-text" id="paragraph" cols="50" rows="10" placeholder="What would you like to contact me about?..."></textarea><br><br>
+            <input type="submit" value="submit">
+        </div>  
+    </body>
+</html>

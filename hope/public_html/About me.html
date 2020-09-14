@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html> 
+    
+    <head>
+        <title>About me</title>
+        <link rel="stylesheet" href="cooleffects.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body class="background2" id='background'>
+        <svg id="fader"></svg>
+        <script>
+            fadeInPage();
+            function fadeInPage() {
+               if (!window.AnimationEvent) {return;} // for browsers that dont support this
+           var fader = document.getElementById('fader');
+           fader.classList.add('fade-out');}
+       
+       document.addEventListener('DOMContentLoaded', function(){
+           if (!window.AnimationEvent) {return;}
+           var anchors = document.getElementsByTagName('a');
+           
+           for (var idx=0; idx<anchors.length; idx+=1) {
+               
+               if (anchors[idx].hostname !== window.location.hostname){
+                   return;
+               }
+               anchors[idx].addEventListener('click', function(event){
+                   var fader = document.getElementById('fader'),
+                   anchor = event.currentTarget;
+                   
+                   var listener = function() {
+                       window.location = anchor.href;
+                       fader.removerEventListener('animationend', listener);
+                   };
+                   fader.addEventListener('animationend', listener);
+                   
+                   event.preventDefault();
+                   fader.classList.add('fade-in');
+               });
+               
+           }
+       });
+        </script>
+        <button class='homebutton'><a href = 'index.html'>Home</a></button>
+        
+        <div class='quad'>
+            
+            <h3>Qualifications</h3>
+            <p>Mainly just this website. This is self-hosted so the site might be a little slow. this is not due to my sites performance but the limitations of home Internet vs professional Internet. I am a newcomer but despite that I can do pretty much anything you want while getting it done on time.</p>
+        </div>
+        <div class='back'>
+            <h3>Background</h3>
+            <p> I have been interested in programming for as long as I can remember. I did write a small program back in the day that changed the start menu and would change the wallpaper of the log off screen to what ever you wanted. This was oh 8 years ago but I did skip school (was in high school) to work on it so I can be very dedicated to finding how to do something. I never released as I didn't know how or if it would even work with anyone elses system. Since then I either tried going in to other parts of the technology industry or got so caught up with life that I never had the time to come back to it. UNTILL NOW! Thanks to Covid-19 I lost my job and can't seem to find any other job that can sustain my family. </p>
+        </div>
+        <div class="back">
+            <h5>My Information</h5><br>
+            <p>Name:Micah Bennett</p><br>
+            <p>Email:Halflifemods12345@gmail.com</p><br>
+            <p>Place of habitation:Literally the middle of Wisconsin</p>
+        </div>
+        
+    </body>
+</html>

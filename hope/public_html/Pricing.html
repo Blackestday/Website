@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pricing</title>
+        <link rel="stylesheet" href="cooleffects.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class='background3'> 
+        
+        <svg id="fader"></svg>
+        <script>
+            fadeInPage();
+            function fadeInPage() {
+               if (!window.AnimationEvent) {return;} // for browsers that dont support this
+           var fader = document.getElementById('fader');
+           fader.classList.add('fade-out');}
+       
+       document.addEventListener('DOMContentLoaded', function(){
+           if (!window.AnimationEvent) {return;}
+           var anchors = document.getElementsByTagName('a');
+           
+           for (var idx=0; idx<anchors.length; idx+=1) {
+               
+               if (anchors[idx].hostname !== window.location.hostname){
+                   return;
+               }
+               anchors[idx].addEventListener('click', function(event){
+                   var fader = document.getElementById('fader'),
+                   anchor = event.currentTarget;
+                   
+                   var listener = function() {
+                       window.location = anchor.href;
+                       fader.removerEventListener('animationend', listener);
+                   };
+                   fader.addEventListener('animationend', listener);
+                   
+                   event.preventDefault();
+                   fader.classList.add('fade-in');
+               });
+               
+           }
+       });
+        </script>
+        
+        
+        
+        
+         <button class='homebutton'><a href = 'index.html'>Home</a></button>
+        
+        <H1 class='title'>Pricing!</H1>
+            <div class="grid-container">
+  <div class="grid-item">Basic</div>
+  <div class="grid-item">Standard</div>
+  <div class="grid-item">Premium</div>  
+  <div class="grid-item">I will Code a fully responsive Landing page</div>
+  <div class="grid-item">I will Code a fully responsive Website (5 pages)</div>
+  <div class="grid-item">I will Code a fully responsive Website (10pages)</div>  
+  <div class="grid-item">2 day delivery</div>
+  <div class="grid-item">6 day delivery</div>
+  <div class="grid-item">10 day delivery</div>
+  <div class="grid-item">$40</div>  
+  <div class="grid-item">$200</div>  
+  <div class="grid-item">$500</div>
+  <div class="grid-item"><button Class='Pricebutton1'>Select Basic</button></div>
+  <div class="grid-item"><button Class='Pricebutton2'>Select Standard</button></div>
+  <div class="grid-item"> <button Class='Pricebutton3'>Select Premium</button></div>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,219 @@
+     #fader{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        pointer-events: none;
+        background: black;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+     }
+     
+     @keyframes fade-out{
+         from { opacity: 1}
+         to {opacity: 0 }
+     }
+     
+     @keyframes fade-in{
+         from { opacity: 0 }
+         to { opacity: 1 }
+     }
+     
+     #fader.fade-out{
+         opacity: 0;
+         animation-name: fade-out;
+     }
+     
+     #fader.fade-in{
+         opacity: 1;
+         animation-name: fade-in;
+     }
+
+     .background1{
+                background-image: url(img/landing.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;}
+     .background2{
+                background-image: url(img/gman.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+     }
+
+     
+     .background3{
+          background-image: url(img/pricing.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+     }
+     .background4{
+         background-image: url(img/Contactme.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+     }
+     
+     .Contactme{
+         font-family: sans-serif;
+         font-size: 50px;
+         align-self: center;
+         padding: 40px;
+         color: white;
+     }
+     
+     .info{
+         background-color: rgba(25, 73, 76, 0.5);
+         float: right;
+         width: 80%;
+         padding: 100px
+     }
+     
+     .homebutton{
+         background-color: black;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  padding: 20px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px
+     }
+     .quad{
+         color: #eae3e3;
+         background-color: rgba(0,0,0,0.2);
+         font-family: arial Black;
+         font-size: 20px;
+         font-size-adjust: 0.5; 
+         font-weight: bold;
+         text-align: center
+     }
+     .homebutton{
+         text-align: left;
+
+     }
+     
+     .back{
+         color: #eae3e3;
+         background-color: rgba(0,0,0,0.2);
+         font-family: arial Black;
+         font-size: 20px;
+         font-size-adjust: 0.5; 
+         text-align: center;
+         font-weight: bold;
+     }
+     .top-container{
+         padding: 285px;
+         text-align: center;
+         font-family: Airal;
+         font-size: xx-large;
+         color: white;
+         font-weight: bold;
+         
+     }
+      body{
+         margin:0!important
+}
+     .header{
+         background-color: #141414;
+         padding: 10px 16px;
+         border-radius: 5px;
+         margin: 0;
+         border-right: 0;
+         
+     } 
+ .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;}
+ 
+     .Buttons{   
+         background-color: #141414;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  padding: 20px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px}
+    
+  a{color:white;
+     text-decoration: none;}
+     
+     
+     .Pricebutton1{
+         background-color: #14106b;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  padding: 25px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  
+     }    
+     
+          .Pricebutton2{
+         background-color: #14106b;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  padding: 25px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  
+     }  
+     
+          .Pricebutton3{
+         background-color: #14106b;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  padding: 20px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+     }  
+     
+     .title{
+         text-align: center;
+         font-family: Arial Black;
+         font-weight: bold;
+         font-size: 45px;
+     }
+     
+
+    
+  .grid-container {
+  display: grid;
+  grid-template-columns:auto auto auto;
+  background-color: #a41c14;
+  padding: 10px;
+}
+.grid-item {
+  background-color: #14106b;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 40px;
+  font-family: arial black;
+  text-align: center;
+}
